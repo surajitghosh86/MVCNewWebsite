@@ -10,7 +10,7 @@ namespace MVC_NewWebsite.Controllers
     public class LoginController : Controller
     {
         #region LOGIN
-        [HttpGet]
+        [HttpGet] 
         public ActionResult Login()
         {
             return View();
