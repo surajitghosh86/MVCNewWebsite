@@ -15,14 +15,24 @@
 
     <style>
         html, body {
-            background: url('/Images/homePage.png') no-repeat center center fixed;
+            /*background: url('/Images/homePage.png') no-repeat center center fixed;*/
             -webkit-background-size: cover;
             -moz-background-size: cover;
             background-size: cover;
             -o-background-size: cover;
             margin: 0;
             height: 100%;
-            overflow: hidden
+            width:100%;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+        .copyright {
+            background-color: #000;
+            text-align: center;
+            margin: 10px 0 10px 0;
+            font-family: Verdana;
+            font-size: 10px;
+            color:white;
         }
     </style>
     <script type="text/javascript">
@@ -38,12 +48,19 @@
     </script>
 </head>
 <body>
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-inverse" style="margin-bottom: 0 !important;">
         <div>
             <ul class="nav navbar-nav navbar-right">
                 <li><a id="pop_LoginEmployee" href="/Login/LoginEmployee"><span class="glyphicon glyphicon-log-in"></span> Employee Login</a></li>
                 <li><a id="pop_LoginAdmin" href="/Login/LoginAdmin"><span class="glyphicon glyphicon-log-in"></span> Admin Login</a></li>
+                &nbsp;&nbsp;&nbsp;&nbsp;
             </ul>
+        </div>
+        <div>
+            <img src="~/Images/homePage.png" style="width:100%;" />            
+        </div>
+        <div class="copyright">
+            &copy; 2020 MVC NEW WEBSITE
         </div>
     </nav>
 </body>
