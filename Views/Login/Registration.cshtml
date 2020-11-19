@@ -1,0 +1,108 @@
+﻿@using MVC_NewWebsite.Models
+@model MVC_NewWebsite.Models.Users
+
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Registration</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/bootstrap/css")
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/bootstrap")
+</head>
+<body>
+    @using (Html.BeginForm("Registration", "Login", FormMethod.Post))
+    {
+        <div class="container">
+            <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="panel-title">Registration</div>
+                    </div>
+
+                    <div style="padding-top:30px" class="panel-body">
+                        <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                        <div class="control-group">
+                            @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label", @for = "FirstName" })
+                            <div class="controls">
+                                @Html.TextBoxFor(model => model.FirstName, htmlAttributes: new { placeholder = "Your First Name*", @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label", @for = "LastName" })
+                            <div class="controls">
+                                @Html.TextBoxFor(model => model.LastName, htmlAttributes: new { placeholder = "Your Last Name*", @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label", @for = "Email" })
+                            <div class="controls">
+                                @Html.TextBoxFor(model => model.Email, htmlAttributes: new { placeholder = "Your Email*", @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label", @for = "Password" })
+                            <div class="controls">
+                                @Html.TextBoxFor(model => model.Password, htmlAttributes: new { placeholder = "Your Password*", @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            @Html.LabelFor(model => model.ComparePassword, htmlAttributes: new { @class = "control-label", @for = "ComparePassword" })
+                            <div class="controls">
+                                @Html.TextBoxFor(model => model.ComparePassword, htmlAttributes: new { placeholder = "Your ComparePassword*", @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.ComparePassword, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            @Html.LabelFor(model => model.Age, htmlAttributes: new { @class = "control-label", @for = "Age" })
+                            <div class="controls">
+                                @Html.TextBoxFor(model => model.Age, htmlAttributes: new { placeholder = "Your Age", @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            @Html.LabelFor(model => model.Phone, htmlAttributes: new { @class = "control-label", @for = "Phone" })
+                            <div class="controls">
+                                @Html.TextBoxFor(model => model.Phone, htmlAttributes: new { placeholder = "Your Phone*", @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="controls">
+                                @Html.GoogleCaptcha()
+                                @Html.InvalidGoogleCaptchaLabel("Captcha is not valid !")
+                            </div>
+                        </div>
+
+                        <div style="margin-top:10px" class="form-group">
+                            <div class="col-sm-12 controls">
+                                <button class="btn btn-success" type="submit">Register</button>
+                                <a class="btn btn-small" href="/Login/LoginEmployee">Back</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+        @Scripts.Render("~/bundles/jqueryval")
+    </body>
+</html>

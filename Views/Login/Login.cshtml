@@ -1,0 +1,47 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <style>
+        body {
+            background: url('https://source.unsplash.com/twukN12EN7c/1920x1080') no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            background-size: cover;
+            -o-background-size: cover;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#pop_LoginEmployee").click(function () {
+                $("#loginModal").modal('show');
+            });
+
+            $("#pop_LoginAdmin").click(function () {
+                $("#loginModal").modal('hide');
+            });
+        });
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a id="pop_LoginEmployee" href="/Login/LoginEmployee"><span class="glyphicon glyphicon-log-in"></span> Employee Login</a></li>
+                <li><a id="pop_LoginAdmin" href="/Login/LoginAdmin"><span class="glyphicon glyphicon-log-in"></span> Admin Login</a></li>
+            </ul>
+        </div>
+    </nav>
+</body>
+</html>

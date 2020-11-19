@@ -1,0 +1,14 @@
+﻿
+.EmployeeRegistration  {
+    color: #645151;
+    font-weight: 600;
+    text-decoration: none;
+}
+.EmployeeRegistration:hover {
+    text-decoration: none;
+}
+
+
+.control-group{
+    margin-top:20px;
+}
